@@ -8,25 +8,15 @@ import sys
 import time
 import signal
 
-def signal_handler(signal, frame):
-        print('Bye!')
-        sys.exit(0)
-
 def main(session):
     # Get the service ALTabletService.
-
     try:
         tabletService = session.service("ALTabletService")
 
         tabletService.loadApplication("building_maps")
         tabletService.showWebview()
-
-        print("Waiting for Ctrl+C to disconnect")
-        signal.pause()
-
     except Exception, e:
         print "Error was: ", e
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
