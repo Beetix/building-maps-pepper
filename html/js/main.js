@@ -19,6 +19,11 @@ $(document).ready(function() {
         say("Voilà");
     }
 
+    if ($("#image").prop("complete")) {
+        $("#loader").hide();
+        say("Voilà");
+
+    }
     $(".floor").click(function () {
         if ($(this).hasClass("selected"))
         {
